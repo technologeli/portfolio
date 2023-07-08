@@ -1,0 +1,17 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="grid gap-2">
+    <h3 class="text-2xl font-thin">{title}</h3>
+    <ul
+        role="list"
+        class="after:content-[' '] grid snap-x grid-flow-col gap-4 overflow-x-auto pb-2 after:w-4"
+    >
+        <slot />
+    </ul>
+</section>

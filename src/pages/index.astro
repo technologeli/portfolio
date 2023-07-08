@@ -1,81 +1,176 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
+import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Elijah Lieu | Developer">
+    <main class="grid lg:h-[100dvh] lg:grid-cols-2">
+        <header
+            class="pt-8 lg:pt-0 flex flex-col items-center justify-center gap-4 text-center"
+        >
+            <div>
+                <h1
+                    class="bg-gradient-to-br from-primary-1 to-primary-2 bg-clip-text p-1 text-6xl font-bold text-transparent dark:from-secondary-1 dark:to-secondary-2"
+                >
+                    Elijah Lieu
+                </h1>
+                <h2 class="text-bw-2 font-thin">Developer, Student</h2>
+            </div>
+            <ThemeIcon />
+            <div class="flex gap-2">
+                <a
+                    class="left-4 rounded-lg bg-black p-2 transition-opacity hover:opacity-80 dark:bg-white"
+                    href="https://github.com/technologeli"
+                    target="_blank"
+                >
+                    <img
+                        src="/github-mark-white.svg"
+                        class="h-8 w-8 dark:hidden"
+                        alt="github logo"
+                    />
+                    <img
+                        src="/github-mark.svg"
+                        class="hidden h-8 w-8 dark:block"
+                        alt="github logo"
+                    />
+                </a>
+                <button
+                    class="left-4 rounded-lg bg-black p-2 transition-opacity hover:opacity-80 dark:bg-white"
+                    id="mail"
+                    name="getEmailAddress"
+                >
+                    <svg
+                        class="h-8 w-8 stroke-white dark:stroke-black"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-mail"
+                        ><rect width="20" height="16" x="2" y="4" rx="2"
+                        ></rect><path
+                            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                        ></path></svg
+                    >
+                </button>
+            </div>
+            <p class="hidden" id="email"></p>
+        </header>
+        <div class="flex h-full flex-col gap-8 overflow-y-auto py-10 pl-4">
+            <Section title="Employment">
+                <Card
+                    href="https://ace.fsu.edu/tutoring"
+                    title="ACE Tutoring"
+                    sub="June 2023 - Present"
+                    body="Part-time on-campus peer tutoring students in computer science and physics."
+                />
+            </Section>
+            <Section title="Current Projects">
+                <Card
+                    href="https://lexicon.elieu.dev"
+                    title="Lexicon"
+                    sub="TypeScript, Svelte, SQL"
+                    body="A personal dictionary tool."
+                />
+                <Card
+                    href="https://github.com/technologeli/interpreter"
+                    title="Interpreter in Go"
+                    sub="Go"
+                    body="Interpreter in Go, based on Thorsten Ball's book."
+                />
+            </Section>
+            <Section title="Past Projects">
+                <Card
+                    href="https://technologeli.github.io/map-colorizer/"
+                    title="Acaex"
+                    sub="TypeScript, Next.js, SQL"
+                    body="Mock e-commerce site. Placed 9th nationally in E-Commerce for Future Business Leaders of America (FBLA)."
+                />
+                <Card
+                    href="https://technologeli.github.io/map-colorizer/"
+                    title="Map Colorizer"
+                    sub="Unity"
+                    body="Four color theorem visualizer."
+                />
+                <Card
+                    href="https://github.com/technologeli/uncontained"
+                    title="Uncontained"
+                    sub="React, Electron"
+                    body="Puzzle Platformer. Placed 3rd in the state for Computer Game & Simulation Programming for FBLA."
+                />
+                <Card
+                    href="https://caesar.elieu.dev/"
+                    title="Caesar Cipher"
+                    sub="React"
+                    body="Caesar cipher visualizer."
+                />
+                <Card
+                    href="https://ww2.elieu.dev/"
+                    title="European Theater"
+                    sub="Next.js"
+                    body="Interactive map of World War 2 for a college European history course project."
+                />
+                <Card
+                    href="https://github.com/technologeli/sudoku_solver"
+                    title="Sudoku Solver"
+                    sub="Rust"
+                    body="Backtracking sudoku algorithm."
+                />
+            </Section>
+            <Section title="Proficiencies">
+                <Card
+                    href="https://en.wikipedia.org/wiki/SQL"
+                    title="SQL"
+                    sub="5 years"
+                    body="Relational database query language."
+                />
+                <Card
+                    href="https://www.typescriptlang.org/"
+                    title="TypeScript"
+                    sub="2 years"
+                    body="JavaScript, with types."
+                />
+                <Card
+                    href="https://react.dev/"
+                    title="React"
+                    sub="3 years"
+                    body="Reactive web interfaces."
+                />
+                <Card
+                    href="https://nextjs.org/"
+                    title="Next.js"
+                    sub="2 years"
+                    body="The React Framework for the Web."
+                />
+                <Card
+                    href="https://isocpp.org/"
+                    title="C++"
+                    sub="1 year"
+                    body="High-level, general-purpose programming language."
+                />
+            </Section>
+        </div>
+    </main>
+    <script is:inline>
+        document.getElementById("mail").addEventListener("click", (e) => {
+            const username = "elijahlieu";
+            const at = " [at] ";
+            const domain = "protonmail.com";
+            const text = username + at + domain;
+            const span = document.getElementById("email");
+            if (span.classList.contains("hidden")) {
+                span.classList.remove("hidden");
+                span.innerText = text;
+            } else {
+                span.classList.add("hidden");
+                span.innerText = "";
+            }
+        });
+    </script>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>

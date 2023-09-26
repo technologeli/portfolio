@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Section from "../components/Section.astro";
 import ThemeIcon from "../components/ThemeIcon.astro";
+import { Image } from "astro:assets";
+import professionalHeadshot from "../professional_headshot.jpg";
 ---
 
 <Layout title="Elijah Lieu | Developer">
@@ -10,13 +12,16 @@ import ThemeIcon from "../components/ThemeIcon.astro";
         <header
             class="flex flex-col items-center justify-center gap-4 pt-8 text-center lg:pt-0"
         >
-            <div>
+            <div class="flex flex-col items-center">
+                <Image src={professionalHeadshot} alt="Professional Headshot" class="h-64 w-48 rounded-lg border border-gray-200 dark:border-gray-800" />
                 <h1
                     class="bg-gradient-to-br from-primary-1 to-primary-2 bg-clip-text p-4 text-6xl font-bold text-transparent dark:from-secondary-1 dark:to-secondary-2"
                 >
                     Elijah Lieu
                 </h1>
-                <h2 class="text-bw-2 font-thin dark:font-normal">Developer, Student</h2>
+                <h2 class="text-bw-2 font-thin dark:font-normal">
+                    Developer, Student
+                </h2>
             </div>
             <div class="flex gap-2">
                 <ThemeIcon />

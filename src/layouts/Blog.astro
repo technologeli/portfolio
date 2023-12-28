@@ -1,0 +1,43 @@
+---
+import ThemeIcon from "../components/ThemeIcon.astro";
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Elijah Lieu's Portfolio" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body class="px-8 sm:px-16 md:px-32 flex justify-center dark:bg-black dark:text-white">
+        <a class="absolute top-2 left-2 hover:opacity-75 transition-opacity" href="/">
+            <span>&larr;</span>
+            Back to Portfolio
+        </a>
+        <main class="max-w-6xl flex flex-col space-y-12 py-32">
+            <header>
+                <h1
+                    class="bg-gradient-to-br from-primary-1 to-primary-2 bg-clip-text text-2xl sm:text-4xl font-bold text-transparent dark:from-secondary-1 dark:to-secondary-2"
+                >
+                    {frontmatter.title}
+                </h1>
+                <div class="flex justify-between">
+                <h2 class="font-thin dark:font-normal">{frontmatter.author}</h2>
+                <h3 class="font-thin dark:font-normal">{frontmatter.date.slice(0, 10)}</h3>
+                </div>
+            </header>
+            <div
+                class="prose dark:prose-invert max-w-none
+                prose-h1:text-2xl 
+                prose-headings:bg-gradient-to-br prose-headings:from-primary-1 prose-headings:to-primary-2 prose-headings:bg-clip-text
+                prose-headings:font-bold prose-headings:text-transparent prose-headings:dark:from-secondary-1 prose-headings:dark:to-secondary-2
+                prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl">
+                <slot />
+            </div>
+            <div class="fixed bottom-2 right-2"><ThemeIcon /></div>
+        </main>
+    </body>
+</html>

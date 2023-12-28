@@ -120,8 +120,14 @@ import professionalHeadshot from "../professional_headshot.jpg";
             <Section title="Employment">
                 <Card
                     href="https://ace.fsu.edu/tutoring"
+                    title="Teaching Assistant"
+                    sub="January 2023 - Present"
+                    body="Teach labs, hold office hours, and grade coursework to assist students in computer science courses."
+                />
+                <Card
+                    href="https://ace.fsu.edu/tutoring"
                     title="ACE Tutoring"
-                    sub="June 2023 - Present"
+                    sub="June 2023 - December 2023"
                     body="Part-time on-campus peer tutoring students in computer science and physics."
                 />
             </Section>
@@ -137,6 +143,15 @@ import professionalHeadshot from "../professional_headshot.jpg";
                     title="Interpreter in Go"
                     sub="Go"
                     body="Interpreter in Go, based on Thorsten Ball's book."
+                />
+            </Section>
+            <Section title="Blog">
+                <Card
+                    href="/blog/01-wrong-tool/"
+                    title="The Wrong Tools for the Job"
+                    sub="2023-12-28"
+                    body="Sometimes, choosing the wrong tools can help you learn more about both the tools and the job."
+                    sametab
                 />
             </Section>
             <Section title="Past Projects">
@@ -212,7 +227,7 @@ import professionalHeadshot from "../professional_headshot.jpg";
         </div>
     </main>
     <script is:inline>
-        document.getElementById("mail").addEventListener("click", (e) => {
+        document.getElementById("mail").addEventListener("click", () => {
             const username = "elijahlieu";
             const at = " [at] ";
             const domain = "protonmail.com";

@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-using namespace sdt;
+using namespace std;
 
 void printSquared();
 
@@ -47,7 +47,8 @@ int main() {
     // to the function printSquared
     if (true) {
         int x;
-        cin >> "Give me a number: " << endl;
+        cout << "Give me a number: ";
+        cin >> x;
         cout << "Your number squared is " << x * x << endl;
     }
 

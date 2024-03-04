@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-using namespace std;
+using namespace sdt;
 
 void printSquared();
 
